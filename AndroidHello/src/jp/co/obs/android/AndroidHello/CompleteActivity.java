@@ -43,7 +43,8 @@ public class CompleteActivity extends Activity {
     	String latitude = "";
     	String longitude = "";
 
-        if( loc == null) {
+    	// 使用出来るロケーションプロバイダが未決定の場合は、「取得不可」
+    	if( loc == null) {
         	latitude = "　取得不可";
         	longitude = "　取得不可";
         }
