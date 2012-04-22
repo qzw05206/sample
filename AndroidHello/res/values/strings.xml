@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">就業時間記録アプリ</string>
+    <string name="app_name">AndroidHello</string>
+    <string name="button1">始　業</string>
+    <string name="button2">移　動</string>
+    <string name="button3">終　業</string>
+    <string name="button4">履歴一覧</string>
+    <string name="button5">戻る</string>
+    <string name="button6">戻る</string>
+    <string name="textview1">画面遷移しました</string>
+
+</resources>
