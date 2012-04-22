@@ -28,6 +28,7 @@ public class ReferenceActivity extends Activity {
         Button myButton6 = (Button) findViewById(R.id.button6);
         myButton6.setOnClickListener(new Button6ClickListener());
 
+        //　DBから登録された位置情報を取得
         OBSdb_DAO dao = new OBSdb_DAO(this);
         List<DB_Location_DTO> list_dto = new ArrayList<DB_Location_DTO>();;
         dao.select(list_dto);

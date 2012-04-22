@@ -65,4 +65,30 @@ public class OBSdb_DAO {
 			OBSdb.close();
 		}
 	}
+
+	//　最後の登録情報をDBからデータを取得する関数
+	public void select_last(DB_Location_DTO loc_dto) {
+
+		SQLiteDatabase OBSdb = dbConnection.getReadableDatabase();
+
+		String sqlstr =		"select addtime,addflg,latitude,longitude " +
+							"from location " +
+							"order by addtime desc " +
+							"limit 1";
+		try{
+
+			Cursor cursor = OBSdb.rawQuery(sqlstr,null);
+
+			//query()またはrawQuery()の実行
+			if(cursor.moveToFirst()){
+					loc_dto.setAddtime(cursor.getString(cursor.getColumnIndex("addtime")));
+					loc_dto.setAddflg(cursor.getString(cursor.getColumnIndex("addflg")));
+					loc_dto.setLatitude(cursor.getString(cursor.getColumnIndex("latitude")));
+					loc_dto.setLongitude(cursor.getString(cursor.getColumnIndex("longitude")));
+			}
+		}finally{
+			OBSdb.close();
+		}
+	}
+
 }
