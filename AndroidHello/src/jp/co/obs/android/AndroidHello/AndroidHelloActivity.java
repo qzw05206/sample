@@ -21,6 +21,7 @@ public class AndroidHelloActivity extends Activity {
 	        DB_Location_DTO loc_dto = new DB_Location_DTO();
 	        dao.select_last(loc_dto);
 
+	        // 入力チェックを行う(始業の連続登録は不可)
 	        if (loc_dto.getAddflg().equals("始業")==true) {
 	    		Toast.makeText(AndroidHelloActivity.this, "始業を連続して登録する事は出来ません。",
 	    				Toast.LENGTH_SHORT).show();
@@ -46,6 +47,7 @@ public class AndroidHelloActivity extends Activity {
 	        DB_Location_DTO loc_dto = new DB_Location_DTO();
 	        dao.select_last(loc_dto);
 
+	        // 入力チェックを行う(終業の連続登録は不可)
 	        if (loc_dto.getAddflg().equals("終業")==true) {
 	    		Toast.makeText(AndroidHelloActivity.this, "終業を連続して登録する事は出来ません。",
 	    				Toast.LENGTH_SHORT).show();
